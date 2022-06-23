@@ -21,17 +21,24 @@ def register(request):
         if password == repeatpassword:
             ven = Vendormodel(vendorname=vendorname,email=email,password=password,itemname=itemname,itemquantity=itemquantity).save()
             messages.info(request, 'Successfully Registered')
-            return redirect('/vendor/sign/')
+            return redirect('/vendor/signup/')
         else:
             messages.error(request, 'Passwords should be same!!!')
     return render(request, 'vendor/rl/index.html')
 
 
-# def login(request):
-#     if request.method == 'post':
-#         email = request.POST["email"]
-#         password = request.POST["password1"]
-#         print(email)
-#         print(password)
-#     return render(request, 'vendor/rl/index.html')
+def login(request):
+    if request.method == 'POST':
+        email = request.POST["email"]
+        password = request.POST["password1"]
+        print(email)
+        print(password)
+        try:
+            ven = Vendormodel.objects.get(email=email)
+            messages.success(request, "Login Success")
+            return redirect('/vendor/')
+        except:
+            messages.error(request, "Given details not found")
+            return redirect('/vendor/signin/')
+    return render(request, 'vendor/rl/index.html')
 

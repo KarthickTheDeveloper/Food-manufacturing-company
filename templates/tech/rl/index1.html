@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
 {% load static %}
+<html lang="en">
+
     <head>
 
         <meta charset="utf-8">
@@ -10,38 +11,42 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="{% static 'techassets/bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'techassets/font-awesome/css/font-awesome.min.css' %}">
-		<link rel="stylesheet" href="{% static 'techassets/css/form-elements.css' %}">
-        <link rel="stylesheet" href="{% static 'techassets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'venassets/bootstrap/css/bootstrap.min.css'%}">
+        <link rel="stylesheet" href="{% static 'venassets/font-awesome/css/font-awesome.min.css'%}">
+		<link rel="stylesheet" href="{% static 'venassets/css/form-elements.css'%}">
+        <link rel="stylesheet" href="{% static 'venassets/css/style.css'%}">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!-- HTML5 Shim and Respond.js'%} IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js'%} doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js'%}"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js'%}/1.4.2/respond.min.js'%}"></script>
         <![endif]-->
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="{% static 'techassets/ico/favicon.png' %}">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'techassets/ico/apple-touch-icon-144-precomposed.png' %}">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'techassets/ico/apple-touch-icon-114-precomposed.png' %}">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'techassets/ico/apple-touch-icon-72-precomposed.png' %}">
-        <link rel="apple-touch-icon-precomposed" href="{% static 'techassets/ico/apple-touch-icon-57-precomposed.png' %}">
+        <link rel="shortcut icon" href="{% static 'venassets/ico/favicon.png'%}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'venassets/ico/apple-touch-icon-144-precomposed.png'%}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'venassets/ico/apple-touch-icon-114-precomposed.png'%}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'venassets/ico/apple-touch-icon-72-precomposed.png'%}">
+        <link rel="apple-touch-icon-precomposed" href="{% static 'venassets/ico/apple-touch-icon-57-precomposed.png'%}">
 
     </head>
 
     <body>
-
+	{% for m in messages %}
+	<script>
+		alert('{{ m }}')
+	</script>
+	{% endfor %}
         <!-- Top content -->
-        <div class="top-content">
-        	
+        <div  class="top-content">
+
             <div class="inner-bg">
                 <div class="container">
-                	
+
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text">
-                            <h1><strong>Bootstrap</strong> Login &amp; Register Forms</h1>
+                            <h1><strong>Vendor</strong> Login &amp; Register Forms</h1>
                             <div class="description">
 <!--                            	<p>-->
 <!--	                            	This is a free responsive <strong>"login and register forms"</strong> template made with Bootstrap. -->
@@ -51,37 +56,37 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="row">
-                        <div class="col-sm-5">
-                        	
-                        	<div class="form-box">
-	                        	<div class="form-top">
-	                        		<div class="form-top-left">
-	                        			<h3>Login to our site</h3>
-	                            		<p>Enter username and password to log on:</p>
-	                        		</div>
-	                        		<div class="form-top-right">
-	                        			<i class="fa fa-lock"></i>
-	                        		</div>
-	                            </div>
-	                            <div class="form-bottom">
-				                    <form role="form" action="/tech/signin/" method="post" class="login-form">
-										{% csrf_token %}
-				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-username">Email</label>
-				                        	<input type="email" name="email" placeholder="Email..." class="form-username form-control" id="form-username">
-				                        </div>
-				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-password">Password</label>
-				                        	<input type="password" name="password1" placeholder="Password..." class="form-password form-control" id="form-password">
-				                        </div>
-<!--				                        <button type="submit" class="btn">Sign in!</button>-->
-										<input type="submit" value="Sign In!">
-				                    </form>
-			                    </div>
-		                    </div>
-		                
+<!--                    -->
+<!--                    <div class="row">-->
+<!--                        <div class="col-sm-4 col-sm-offset-4 text">-->
+<!--                        	-->
+<!--                        	<div class="form-box">-->
+<!--	                        	<div class="form-top">-->
+<!--	                        		<div class="form-top-left">-->
+<!--	                        			<h3>Login to our site</h3>-->
+<!--	                            		<p>Enter username and password to log on:</p>-->
+<!--	                        		</div>-->
+<!--	                        		<div class="form-top-right">-->
+<!--	                        			<i class="fa fa-lock"></i>-->
+<!--	                        		</div>-->
+<!--	                            </div>-->
+<!--	                            <div class="form-bottom">-->
+<!--				                    <form role="form" action='/vendor/signin/' method="post" class="login-form">-->
+<!--										{% csrf_token %}-->
+<!--				                    	<div class="form-group">-->
+<!--				                    		<label class="sr-only" for="form-username">Email</label>-->
+<!--				                        	<input type="email" name="email" placeholder="Email..." class="form-username form-control" id="form-username">-->
+<!--				                        </div>-->
+<!--				                        <div class="form-group">-->
+<!--				                        	<label class="sr-only" for="form-password">Password</label>-->
+<!--				                        	<input type="password" name="password1" placeholder="Password..." class="form-password form-control" id="form-password">-->
+<!--				                        </div>-->
+<!--&lt;!&ndash;				                        <button type="submit" class="btn">Sign in!</button>&ndash;&gt;-->
+<!--										<input type="submit" class="btn" value="Sign in!">-->
+<!--				                    </form>-->
+<!--			                    </div>-->
+<!--		                    </div>-->
+<!--		                -->
 <!--		                	<div class="social-login">-->
 <!--	                        	<h3>...or login with:</h3>-->
 <!--	                        	<div class="social-login-buttons">-->
@@ -96,14 +101,14 @@
 <!--		                        	</a>-->
 <!--	                        	</div>-->
 <!--	                        </div>-->
-	                        
+
                         </div>
-                        
+
                         <div class="col-sm-1 middle-border"></div>
                         <div class="col-sm-1"></div>
-                        	
+
                         <div class="col-sm-5">
-                        	
+
                         	<div class="form-box">
                         		<div class="form-top">
 	                        		<div class="form-top-left">
@@ -115,27 +120,31 @@
 	                        		</div>
 	                            </div>
 	                            <div class="form-bottom">
-				                    <form role="form" action="" method="post" class="registration-form">
+				                    <form action='' role="form" method="post" class="registration-form">
 										{% csrf_token %}
 				                    	<div class="form-group">
-				                    		<label class="sr-only" for="form-first-name">User name</label>
-				                        	<input type="text" name="user-name" placeholder="User name..." class="form-first-name form-control" id="form-first-name">
+				                    		<label class="sr-only" for="form-first-name">Vendor name</label>
+				                        	<input type="text" name="vendor-name" placeholder="Vendor name..." class="form-first-name form-control" id="form-first-name">
 				                        </div>
 				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-email">Email</label>
-				                        	<input type="email" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
+				                        	<input type="text" name="email" placeholder="Email..." class="form-email form-control" id="form-email">
 				                        </div>
-										<div class="form-group">
+				                        <div class="form-group">
 				                        	<label class="sr-only" for="form-last-name">Password</label>
 				                        	<input type="password" name="password1" placeholder="Password..." class="form-last-name form-control" id="form-last-name">
 				                        </div>
 										<div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Password</label>
+				                        	<label class="sr-only" for="form-last-name">Repeat Password</label>
 				                        	<input type="password" name="password2" placeholder="Repeat Password..." class="form-last-name form-control" id="form-last-name">
 				                        </div>
+										<div class="form-group">
+				                        	<label class="sr-only" for="form-last-name">Item name</label>
+				                        	<input type="text" name="item-name" placeholder="Item name..." class="form-last-name form-control" id="form-last-name">
+				                        </div>
 				                        <div class="form-group">
-				                        	<label class="sr-only" for="form-last-name">Phone Number</label>
-				                        	<input type="number" name="mobile" placeholder="Phone Number..." class="form-last-name form-control" id="form-last-name">
+				                        	<label class="sr-only" for="form-last-name">Item Quantity</label>
+				                        	<input type="text" name="item-quantity" placeholder="Item Quantity..." class="form-last-name form-control" id="form-last-name">
 				                        </div>
 <!--				                        <div class="form-group">-->
 <!--				                        	<label class="sr-only" for="form-about-yourself">About yourself</label>-->
@@ -143,42 +152,42 @@
 <!--				                        				class="form-about-yourself form-control" id="form-about-yourself"></textarea>-->
 <!--				                        </div>-->
 <!--				                        <button type="submit" class="btn">Sign me up!</button>-->
-										<input type="submit" value="Sign Up!">
+										<input type="submit" class="btn" value="Sign up!">
 				                    </form>
 			                    </div>
                         	</div>
-                        	
+
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
-            
+
         </div>
 
         <!-- Footer -->
         <footer>
         	<div class="container">
         		<div class="row">
-        			
+
         			<div class="col-sm-8 col-sm-offset-2">
         				<div class="footer-border"></div>
-        				<p>Made by Anli Zaimi at <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a> 
+        				<p>Made by Anli Zaimi at <a href="http://azmind.com" target="_blank"><strong>AZMIND</strong></a>
         					having a lot of fun. <i class="fa fa-smile-o"></i></p>
         			</div>
-        			
+
         		</div>
         	</div>
         </footer>
 
         <!-- Javascript -->
-        <script src="{% static 'techassets/js/jquery-1.11.1.min.js' %}"></script>
-        <script src="{% static 'techassets/bootstrap/js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'techassets/js/jquery.backstretch.min.js' %}"></script>
-        <script src="{% static 'techassets/js/scripts.js' %}"></script>
-        
+        <script src="{% static 'venassets/js/jquery-1.11.1.min.js'%}"></script>
+        <script src="{% static 'venassets/bootstrap/js/bootstrap.min.js'%}"></script>
+        <script src="{% static 'venassets/js/jquery.backstretch.min.js'%}"></script>
+        <script src="{% static 'venassets/js/scripts.js'%}"></script>
+
         <!--[if lt IE 10]>
-            <script src="{% static 'techassets/js/placeholder.js' %}"></script>
+            <script src="{% static 'venassets/js/placeholder.js'%}"></script>
         <![endif]-->
 <script>
 
@@ -187,7 +196,7 @@ jQuery(document).ready(function() {
     /*
         Fullscreen background
     */
-    $.backstretch("{% static 'techassets/img/backgrounds/1.jpg'%}");
+    $.backstretch("{% static 'venassets/img/backgrounds/1.jpg'%}");
 
     /*
         Login form validation

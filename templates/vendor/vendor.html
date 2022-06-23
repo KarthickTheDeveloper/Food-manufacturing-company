@@ -36,7 +36,11 @@
 </head>
 
 <body>
-
+{% for m in messages %}
+	<script>
+		alert('{{ m }}')
+	</script>
+{% endfor %}
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center ">
     <div class="container-fluid">
@@ -50,7 +54,7 @@
           <nav id="navbar" class="navbar">
             <ul>
               <li><a class="nav-link scrollto " href="/">Home</a></li>
-              <li><a class="nav-link scrollto " href="/vendor/sign">Register / Login</a></li>
+              <li><a class="nav-link scrollto " href="/vendor/signup">Register / Login</a></li>
 <!--              <li><a class="nav-link scrollto" href="#about">About</a></li>-->
 <!--              <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
 <!--              <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>-->

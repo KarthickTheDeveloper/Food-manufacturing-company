@@ -1,26 +1,42 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import Techmodel
+from django.contrib import messages
 
 
 # Create your views here.
-# def index(request):
-#     return render(request, 'index.html')
-#
-#
-# def vendor(request):
-#     return render(request, 'vendor.html')
-#
-#
-# def purchase(request):
-#     return render(request, 'purchase.html')
-
-
 def tech(request):
     return render(request, 'tech/tech.html')
 
-#
-# def production(request):
-#     return render(request, 'production.html')
-#
-#
-# def admin(request):
-#     return render(request, 'admin.html')
+
+def register(request):
+    if request.method == 'POST':
+        username = request.POST["user-name"]
+        email = request.POST["email"]
+        password = request.POST["password1"]
+        repeatpassword = request.POST["password2"]
+        phone = request.POST["mobile"]
+        if password == repeatpassword:
+            te = Techmodel(name=username,mail=email,password=password,phone=phone).save()
+            messages.info(request, 'Successfully Registered')
+            return redirect('/tech/signup/')
+        else:
+            messages.error(request, 'Passwords should be same!!!')
+    return render(request, 'tech/rl/index.html')
+
+
+def login(request):
+    if request.method == 'POST':
+        email = request.POST["email"]
+        password = request.POST["password1"]
+        # print(email)
+        # print(password)
+        try:
+            te = Techmodel.objects.get(mail=email)
+            messages.success(request, "Login Success")
+            return redirect('/tech/')
+        except:
+            messages.error(request, "Given details not found")
+            return redirect('/tech/signin/')
+    return render(request, 'tech/rl/index.html')
+
+
