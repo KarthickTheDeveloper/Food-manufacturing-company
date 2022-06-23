@@ -15,7 +15,7 @@ from django.shortcuts import render
 
 
 def tech(request):
-    return render(request, 'tech.html')
+    return render(request, 'tech/tech.html')
 
 #
 # def production(request):

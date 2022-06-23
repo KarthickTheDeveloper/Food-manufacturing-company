@@ -10,10 +10,10 @@
 
         <!-- CSS -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="{% static 'venassets/bootstrap/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'venassets/font-awesome/css/font-awesome.min.css' %}">
-		<link rel="stylesheet" href="{% static 'venassets/css/form-elements.css' %}">
-        <link rel="stylesheet" href="{% static 'venassets/css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'techassets/bootstrap/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'techassets/font-awesome/css/font-awesome.min.css' %}">
+		<link rel="stylesheet" href="{% static 'techassets/css/form-elements.css' %}">
+        <link rel="stylesheet" href="{% static 'techassets/css/style.css' %}">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,11 +23,11 @@
         <![endif]-->
 
         <!-- Favicon and touch icons -->
-        <link rel="shortcut icon" href="{% static 'venassets/ico/favicon.png' %}">
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'venassets/ico/apple-touch-icon-144-precomposed.png' %}">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'venassets/ico/apple-touch-icon-114-precomposed.png' %}">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'venassets/ico/apple-touch-icon-72-precomposed.png' %}">
-        <link rel="apple-touch-icon-precomposed" href="{% static 'venassets/ico/apple-touch-icon-57-precomposed.png' %}">
+        <link rel="shortcut icon" href="{% static 'techassets/ico/favicon.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'techassets/ico/apple-touch-icon-144-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static 'techassets/ico/apple-touch-icon-114-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static 'techassets/ico/apple-touch-icon-72-precomposed.png' %}">
+        <link rel="apple-touch-icon-precomposed" href="{% static 'techassets/ico/apple-touch-icon-57-precomposed.png' %}">
 
     </head>
 
@@ -160,15 +160,69 @@
         </footer>
 
         <!-- Javascript -->
-        <script src="{% static 'venassets/js/jquery-1.11.1.min.js' %}"></script>
-        <script src="{% static 'venassets/bootstrap/js/bootstrap.min.js' %}"></script>
-        <script src="{% static 'venassets/js/jquery.backstretch.min.js' %}"></script>
-        <script src="{% static 'venassets/js/scripts.js' %}"></script>
+        <script src="{% static 'techassets/js/jquery-1.11.1.min.js' %}"></script>
+        <script src="{% static 'techassets/bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'techassets/js/jquery.backstretch.min.js' %}"></script>
+        <script src="{% static 'techassets/js/scripts.js' %}"></script>
         
         <!--[if lt IE 10]>
-            <script src="{% static 'venassets/js/placeholder.js' %}"></script>
+            <script src="{% static 'techassets/js/placeholder.js' %}"></script>
         <![endif]-->
+<script>
 
+jQuery(document).ready(function() {
+
+    /*
+        Fullscreen background
+    */
+    $.backstretch("{% static 'techassets/img/backgrounds/1.jpg'%}");
+
+    /*
+        Login form validation
+    */
+    $('.login-form input[type="text"], .login-form input[type="password"], .login-form textarea').on('focus', function() {
+    	$(this).removeClass('input-error');
+    });
+
+    $('.login-form').on('submit', function(e) {
+
+    	$(this).find('input[type="text"], input[type="password"], textarea').each(function(){
+    		if( $(this).val() == "" ) {
+    			e.preventDefault();
+    			$(this).addClass('input-error');
+    		}
+    		else {
+    			$(this).removeClass('input-error');
+    		}
+    	});
+
+    });
+
+    /*
+        Registration form validation
+    */
+    $('.registration-form input[type="text"], .registration-form textarea').on('focus', function() {
+    	$(this).removeClass('input-error');
+    });
+
+    $('.registration-form').on('submit', function(e) {
+
+    	$(this).find('input[type="text"], textarea').each(function(){
+    		if( $(this).val() == "" ) {
+    			e.preventDefault();
+    			$(this).addClass('input-error');
+    		}
+    		else {
+    			$(this).removeClass('input-error');
+    		}
+    	});
+
+    });
+
+
+});
+
+</script>
     </body>
 
 </html>

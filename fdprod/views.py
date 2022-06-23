@@ -19,7 +19,7 @@ from django.shortcuts import render
 
 
 def production(request):
-    return render(request, 'production.html')
+    return render(request, 'production/production.html')
 
 
 # def admin(request):

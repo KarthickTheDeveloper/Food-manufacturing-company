@@ -11,7 +11,7 @@ from django.shortcuts import render
 
 
 def purchase(request):
-    return render(request, 'purchase.html')
+    return render(request, 'purchase/purchase.html')
 
 
 # def tech(request):
